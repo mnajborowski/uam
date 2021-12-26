@@ -1,0 +1,40 @@
+==27142== Memcheck, a memory error detector
+==27142== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==27142== Using Valgrind-3.18.0.GIT-lbmacos and LibVEX; rerun with -h for copyright info
+==27142== Command: ./a.out
+==27142== Parent PID: 26986
+==27142== 
+--27142-- run: /usr/bin/dsymutil "./a.out"
+==27142== Warning: set address range perms: large range [0x7fff201db000, 0x80001ffdb000) (defined)
+==27142== Warning: set address range perms: large range [0x7fff204af000, 0x7fff7fea3000) (defined)
+==27142== Warning: set address range perms: large range [0x7fff8e42f000, 0x7fffc01db000) (noaccess)
+==27142== Warning: set address range perms: large range [0x7fffc01db000, 0x7fffe2ffb000) (defined)
+==27142== Warning: set address range perms: large range [0x7fffe2ffb000, 0x7fffffe00000) (noaccess)
+==27142== Invalid read of size 16
+==27142==    at 0x7FFF2052C552: ??? (in /dev/ttys004)
+==27142==    by 0x100006D34: std::__1::char_traits<char>::length(char const*) (in ./a.out)
+==27142==    by 0x10000320A: std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::find(char const*, unsigned long) const (in ./a.out)
+==27142==    by 0x100002E43: main (in ./a.out)
+==27142==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==27142== 
+==27142== 
+==27142== Process terminating with default action of signal 11 (SIGSEGV)
+==27142==  Access not within mapped region at address 0x0
+==27142==    at 0x7FFF2052C552: ??? (in /dev/ttys004)
+==27142==    by 0x100006D34: std::__1::char_traits<char>::length(char const*) (in ./a.out)
+==27142==    by 0x10000320A: std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::find(char const*, unsigned long) const (in ./a.out)
+==27142==    by 0x100002E43: main (in ./a.out)
+==27142==  If you believe this happened as a result of a stack
+==27142==  overflow in your program's main thread (unlikely but
+==27142==  possible), you can try to increase the size of the
+==27142==  main thread stack using the --main-stacksize= flag.
+==27142==  The main thread stack size used in this run was 8388608.
+==27142== 
+==27142== HEAP SUMMARY:
+==27142==     in use at exit: 0 bytes in 0 blocks
+==27142==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==27142== 
+==27142== All heap blocks were freed -- no leaks are possible
+==27142== 
+==27142== For lists of detected and suppressed errors, rerun with: -s
+==27142== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

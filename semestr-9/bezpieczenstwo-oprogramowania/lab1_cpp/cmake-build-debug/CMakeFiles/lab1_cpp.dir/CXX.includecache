@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/michal.najborowski/CLionProjects/bezpieczenstwo-oprogramowania/lab1_cpp/main.cpp
+iostream
+-
+fstream
+-
+
+/Users/michal.najborowski/CLionProjects/bezpieczenstwo-oprogramowania/lab1_cpp/zad7.cpp
+

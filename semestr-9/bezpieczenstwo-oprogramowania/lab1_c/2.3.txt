@@ -1,0 +1,36 @@
+==44206== Memcheck, a memory error detector
+==44206== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==44206== Using Valgrind-3.18.0.GIT-lbmacos and LibVEX; rerun with -h for copyright info
+==44206== Command: ./a.out
+==44206== Parent PID: 98860
+==44206== 
+--44206-- run: /usr/bin/dsymutil "./a.out"
+==44206== Warning: set address range perms: large range [0x7fff201db000, 0x80001ffdb000) (defined)
+==44206== Warning: set address range perms: large range [0x7fff204af000, 0x7fff7fea3000) (defined)
+==44206== Warning: set address range perms: large range [0x7fff8e42f000, 0x7fffc01db000) (noaccess)
+==44206== Warning: set address range perms: large range [0x7fffc01db000, 0x7fffe2ffb000) (defined)
+==44206== Warning: set address range perms: large range [0x7fffe2ffb000, 0x7fffffe00000) (noaccess)
+==44206== Invalid read of size 1
+==44206==    at 0x7FFF2052D1CD: ??? (in /dev/ttys000)
+==44206==    by 0x100003EA8: main (in ./a.out)
+==44206==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==44206== 
+==44206== 
+==44206== Process terminating with default action of signal 11 (SIGSEGV)
+==44206==  Access not within mapped region at address 0x0
+==44206==    at 0x7FFF2052D1CD: ??? (in /dev/ttys000)
+==44206==    by 0x100003EA8: main (in ./a.out)
+==44206==  If you believe this happened as a result of a stack
+==44206==  overflow in your program's main thread (unlikely but
+==44206==  possible), you can try to increase the size of the
+==44206==  main thread stack using the --main-stacksize= flag.
+==44206==  The main thread stack size used in this run was 8388608.
+==44206== 
+==44206== HEAP SUMMARY:
+==44206==     in use at exit: 0 bytes in 0 blocks
+==44206==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==44206== 
+==44206== All heap blocks were freed -- no leaks are possible
+==44206== 
+==44206== For lists of detected and suppressed errors, rerun with: -s
+==44206== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

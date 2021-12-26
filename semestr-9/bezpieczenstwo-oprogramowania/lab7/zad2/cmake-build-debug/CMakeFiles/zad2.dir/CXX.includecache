@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/michal.najborowski/CLionProjects/bezpieczenstwo-oprogramowania/lab7/zad2/SafeArray.cpp
+SafeArray.h
+/Users/michal.najborowski/CLionProjects/bezpieczenstwo-oprogramowania/lab7/zad2/SafeArray.h
+
+/Users/michal.najborowski/CLionProjects/bezpieczenstwo-oprogramowania/lab7/zad2/SafeArray.h
+stdexcept
+-
+
+/Users/michal.najborowski/CLionProjects/bezpieczenstwo-oprogramowania/lab7/zad2/main.cpp
+iostream
+-
+SafeArray.h
+/Users/michal.najborowski/CLionProjects/bezpieczenstwo-oprogramowania/lab7/zad2/SafeArray.h
+

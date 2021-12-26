@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/michal.najborowski/CLionProjects/bezpieczenstwo-oprogramowania/lab1/main.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+
