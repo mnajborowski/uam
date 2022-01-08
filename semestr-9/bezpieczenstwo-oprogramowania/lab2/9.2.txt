@@ -1,0 +1,60 @@
+==42943== Helgrind, a thread error detector
+==42943== Copyright (C) 2007-2017, and GNU GPL'd, by OpenWorks LLP et al.
+==42943== Using Valgrind-3.18.0.GIT-lbmacos and LibVEX; rerun with -h for copyright info
+==42943== Command: ./a.out
+==42943== Parent PID: 26986
+==42943== 
+--42943-- run: /usr/bin/dsymutil "./a.out"
+
+Helgrind: hg_main.c:4577 (void instrument_mem_access(IRSB *, IRExpr *, Int, Bool, Bool, Int, Int, Int, IRExpr *)): Assertion 'szB > 8 && szB <= 512' failed.
+
+host stacktrace:
+==42943==    at 0x2580256AF: ???
+==42943==    by 0x258025A37: ???
+==42943==    by 0x258025A1A: ???
+==42943==    by 0x25800A4EC: ???
+==42943==    by 0x25800449B: ???
+==42943==    by 0x25803CEFD: ???
+==42943==    by 0x2580DC5D7: ???
+==42943==    by 0x2580DCEBE: ???
+==42943==    by 0x25803CAC5: ???
+==42943==    by 0x25809D01D: ???
+==42943==    by 0x25809B277: ???
+==42943==    by 0x2580AC21E: ???
+
+sched status:
+  running_tid=1
+
+Thread 1: status = VgTs_Runnable (lwpid 259)
+==42943==    at 0x7FFF20312759: ??? (in /dev/ttys004)
+==42943==    by 0x7FFF20311726: ??? (in /dev/ttys004)
+==42943==    by 0x7FFF2032AFE4: ??? (in /dev/ttys004)
+==42943==    by 0x7FFF2031B29F: ??? (in /dev/ttys004)
+==42943==    by 0x7FFF2031F509: ??? (in /dev/ttys004)
+==42943==    by 0x7FFF2A6BB5C0: ??? (in /dev/ttys004)
+==42943==    by 0x10002D6C6: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==42943==    by 0x10002DAD1: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==42943==    by 0x1000284B5: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==42943==    by 0x100028420: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==42943==    by 0x10002626E: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==42943==    by 0x10002630F: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==42943==    by 0x10001286A: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==42943==    by 0x100018EB1: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==42943==    by 0x100011223: dyldbootstrap::start(dyld3::MachOLoaded const*, int, char const**, dyld3::MachOLoaded const*, unsigned long*) (in /usr/lib/dyld)
+==42943==    by 0x100011024: _dyld_start (in /usr/lib/dyld)
+client stack range: [0x104128000 0x104927FFF] client SP: 0x104925460
+valgrind stack range: [0x70000198E000 0x700001A8DFFF] top usage: 9296 of 1048576
+
+
+Note: see also the FAQ in the source distribution.
+It contains workarounds to several common problems.
+In particular, if Valgrind aborted or crashed after
+identifying problems in your program, there's a good chance
+that fixing those problems will prevent Valgrind aborting or
+crashing, especially if it happened in m_mallocfree.c.
+
+If that doesn't help, please report this bug to: www.valgrind.org
+
+In the bug report, send all the above text, the valgrind
+version, and what OS and version you are using.  Thanks.
+

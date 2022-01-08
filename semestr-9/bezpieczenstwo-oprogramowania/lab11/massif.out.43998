@@ -1,0 +1,515 @@
+desc: --stacks=no --pages-as-heap=yes --time-unit=B
+cmd: ./a.out
+time_unit: B
+#-----------
+snapshot=0
+#-----------
+time=16384
+mem_heap_B=16384
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=49152
+mem_heap_B=49152
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=53248
+mem_heap_B=53248
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=65536
+mem_heap_B=65536
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=507904
+mem_heap_B=507904
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=573440
+mem_heap_B=573440
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=761856
+mem_heap_B=761856
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=786432
+mem_heap_B=786432
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=9175040
+mem_heap_B=9175040
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=9179136
+mem_heap_B=9179136
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n1: 9179136 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n0: 9179136 0x0: ???
+#-----------
+snapshot=10
+#-----------
+time=17567744
+mem_heap_B=17567744
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=17571840
+mem_heap_B=17571840
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=19664896
+mem_heap_B=19664896
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=19664896
+mem_heap_B=19664896
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=4312535040
+mem_heap_B=4312535040
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=4313583616
+mem_heap_B=4313583616
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=4846489600
+mem_heap_B=4846489600
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=4846489600
+mem_heap_B=4846489600
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=peak
+n3: 4846489600 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 4292870144 0x10005646E: __shared_region_check_np (in /usr/lib/dyld)
+  n1: 4292870144 0x100030206: dyld3::reuseExistingCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo*) (in /usr/lib/dyld)
+   n1: 4292870144 0x100030163: dyld3::loadDyldCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo*) (in /usr/lib/dyld)
+    n1: 4292870144 0x10002E041: dyld4::SyscallDelegate::getDyldCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo&) const (in /usr/lib/dyld)
+     n1: 4292870144 0x1000180BA: dyld4::ProcessConfig::DyldCache::DyldCache(dyld4::ProcessConfig::Process&, dyld4::ProcessConfig::Security const&, dyld4::ProcessConfig::Logging const&, dyld4::SyscallDelegate&) (in /usr/lib/dyld)
+      n1: 4292870144 0x1000172E0: dyld4::ProcessConfig::ProcessConfig(dyld4::KernelArgs const*, dyld4::SyscallDelegate&) (in /usr/lib/dyld)
+       n0: 4292870144 0x100015465: (below main) (in /usr/lib/dyld)
+ n1: 533954560 0x1000112A6: _kernelrpc_mach_vm_allocate_trap (in /usr/lib/dyld)
+  n1: 533954560 0x100013303: mach_vm_allocate (in /usr/lib/dyld)
+   n1: 533954560 0x1000132D6: vm_allocate (in /usr/lib/dyld)
+    n1: 533954560 0x10003E302: dyld4::Allocator::vm_allocate_bytes(unsigned long) (in /usr/lib/dyld)
+     n1: 533954560 0x10003E530: dyld4::Allocator::allocate_buffer(unsigned long, unsigned long, bool) (in /usr/lib/dyld)
+      n1: 533954560 0x10003EC78: dyld4::Allocator::bootstrap() (in /usr/lib/dyld)
+       n1: 533954560 0x100030DD5: dyld4::APIs::bootstrap(dyld4::ProcessConfig const&, dyld4::RuntimeLocks&) (in /usr/lib/dyld)
+        n0: 533954560 0x1000154A8: (below main) (in /usr/lib/dyld)
+ n0: 19664896 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=18
+#-----------
+time=4846493696
+mem_heap_B=4846485504
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=5413883904
+mem_heap_B=4332212224
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=5415055360
+mem_heap_B=4333383680
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=5417152512
+mem_heap_B=4335480832
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=5419249664
+mem_heap_B=4337577984
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=5421346816
+mem_heap_B=4339675136
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=5423443968
+mem_heap_B=4341772288
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=5425541120
+mem_heap_B=4343869440
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=5427638272
+mem_heap_B=4345966592
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=5429735424
+mem_heap_B=4348063744
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n3: 4348063744 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 3752034304 0x10005646E: __shared_region_check_np (in /usr/lib/dyld)
+  n1: 3752034304 0x100030206: dyld3::reuseExistingCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo*) (in /usr/lib/dyld)
+   n1: 3752034304 0x100030163: dyld3::loadDyldCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo*) (in /usr/lib/dyld)
+    n1: 3752034304 0x10002E041: dyld4::SyscallDelegate::getDyldCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo&) const (in /usr/lib/dyld)
+     n1: 3752034304 0x1000180BA: dyld4::ProcessConfig::DyldCache::DyldCache(dyld4::ProcessConfig::Process&, dyld4::ProcessConfig::Security const&, dyld4::ProcessConfig::Logging const&, dyld4::SyscallDelegate&) (in /usr/lib/dyld)
+      n1: 3752034304 0x1000172E0: dyld4::ProcessConfig::ProcessConfig(dyld4::KernelArgs const*, dyld4::SyscallDelegate&) (in /usr/lib/dyld)
+       n0: 3752034304 0x100015465: (below main) (in /usr/lib/dyld)
+ n1: 576364544 0x1000112A6: _kernelrpc_mach_vm_allocate_trap (in /usr/lib/dyld)
+  n1: 576364544 0x100013303: mach_vm_allocate (in /usr/lib/dyld)
+   n1: 576364544 0x1000132D6: vm_allocate (in /usr/lib/dyld)
+    n1: 576364544 0x10003E302: dyld4::Allocator::vm_allocate_bytes(unsigned long) (in /usr/lib/dyld)
+     n1: 576364544 0x10003E530: dyld4::Allocator::allocate_buffer(unsigned long, unsigned long, bool) (in /usr/lib/dyld)
+      n1: 576364544 0x10003EC78: dyld4::Allocator::bootstrap() (in /usr/lib/dyld)
+       n1: 576364544 0x100030DD5: dyld4::APIs::bootstrap(dyld4::ProcessConfig const&, dyld4::RuntimeLocks&) (in /usr/lib/dyld)
+        n0: 576364544 0x1000154A8: (below main) (in /usr/lib/dyld)
+ n0: 19664896 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=28
+#-----------
+time=5431832576
+mem_heap_B=4350160896
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=5433929728
+mem_heap_B=4352258048
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=5436026880
+mem_heap_B=4354355200
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=5438124032
+mem_heap_B=4356452352
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=5440221184
+mem_heap_B=4358549504
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=5442318336
+mem_heap_B=4360646656
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=5445373952
+mem_heap_B=4363702272
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=5445378048
+mem_heap_B=4363698176
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=6664179712
+mem_heap_B=3551121408
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=37
+#-----------
+time=6664183808
+mem_heap_B=3551117312
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n3: 3551117312 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 2736336896 0x10005646E: __shared_region_check_np (in /usr/lib/dyld)
+  n1: 2736336896 0x100030206: dyld3::reuseExistingCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo*) (in /usr/lib/dyld)
+   n1: 2736336896 0x100030163: dyld3::loadDyldCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo*) (in /usr/lib/dyld)
+    n1: 2736336896 0x10002E041: dyld4::SyscallDelegate::getDyldCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo&) const (in /usr/lib/dyld)
+     n1: 2736336896 0x1000180BA: dyld4::ProcessConfig::DyldCache::DyldCache(dyld4::ProcessConfig::Process&, dyld4::ProcessConfig::Security const&, dyld4::ProcessConfig::Logging const&, dyld4::SyscallDelegate&) (in /usr/lib/dyld)
+      n1: 2736336896 0x1000172E0: dyld4::ProcessConfig::ProcessConfig(dyld4::KernelArgs const*, dyld4::SyscallDelegate&) (in /usr/lib/dyld)
+       n0: 2736336896 0x100015465: (below main) (in /usr/lib/dyld)
+ n1: 795115520 0x1000112A6: _kernelrpc_mach_vm_allocate_trap (in /usr/lib/dyld)
+  n1: 795115520 0x100013303: mach_vm_allocate (in /usr/lib/dyld)
+   n1: 795115520 0x1000132D6: vm_allocate (in /usr/lib/dyld)
+    n1: 795115520 0x10003E302: dyld4::Allocator::vm_allocate_bytes(unsigned long) (in /usr/lib/dyld)
+     n1: 795115520 0x10003E530: dyld4::Allocator::allocate_buffer(unsigned long, unsigned long, bool) (in /usr/lib/dyld)
+      n1: 795115520 0x10003EC78: dyld4::Allocator::bootstrap() (in /usr/lib/dyld)
+       n1: 795115520 0x100030DD5: dyld4::APIs::bootstrap(dyld4::ProcessConfig const&, dyld4::RuntimeLocks&) (in /usr/lib/dyld)
+        n0: 795115520 0x1000154A8: (below main) (in /usr/lib/dyld)
+ n0: 19664896 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=38
+#-----------
+time=8606494720
+mem_heap_B=1608888320
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=8606543872
+mem_heap_B=1608937472
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=8606560256
+mem_heap_B=1608953856
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=8606576640
+mem_heap_B=1608970240
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=8606593024
+mem_heap_B=1608986624
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=8606597120
+mem_heap_B=1608982528
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=8606642176
+mem_heap_B=1608953856
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=8606650368
+mem_heap_B=1608962048
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=8606670848
+mem_heap_B=1608982528
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=8606703616
+mem_heap_B=1609015296
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=detailed
+n4: 1609015296 (page allocation syscalls) mmap/mremap/brk, --alloc-fns, etc.
+ n1: 795164672 0x1000112A6: _kernelrpc_mach_vm_allocate_trap (in /usr/lib/dyld)
+  n1: 795164672 0x100013303: mach_vm_allocate (in /usr/lib/dyld)
+   n2: 795164672 0x1000132D6: vm_allocate (in /usr/lib/dyld)
+    n1: 795115520 0x10003E302: dyld4::Allocator::vm_allocate_bytes(unsigned long) (in /usr/lib/dyld)
+     n1: 795115520 0x10003E530: dyld4::Allocator::allocate_buffer(unsigned long, unsigned long, bool) (in /usr/lib/dyld)
+      n1: 795115520 0x10003EC78: dyld4::Allocator::bootstrap() (in /usr/lib/dyld)
+       n1: 795115520 0x100030DD5: dyld4::APIs::bootstrap(dyld4::ProcessConfig const&, dyld4::RuntimeLocks&) (in /usr/lib/dyld)
+        n0: 795115520 0x1000154A8: (below main) (in /usr/lib/dyld)
+    n0: 49152 in 1 place, below massif's threshold (1.00%)
+ n1: 794066944 0x10005646E: __shared_region_check_np (in /usr/lib/dyld)
+  n1: 794066944 0x100030206: dyld3::reuseExistingCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo*) (in /usr/lib/dyld)
+   n1: 794066944 0x100030163: dyld3::loadDyldCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo*) (in /usr/lib/dyld)
+    n1: 794066944 0x10002E041: dyld4::SyscallDelegate::getDyldCache(dyld3::SharedCacheOptions const&, dyld3::SharedCacheLoadInfo&) const (in /usr/lib/dyld)
+     n1: 794066944 0x1000180BA: dyld4::ProcessConfig::DyldCache::DyldCache(dyld4::ProcessConfig::Process&, dyld4::ProcessConfig::Security const&, dyld4::ProcessConfig::Logging const&, dyld4::SyscallDelegate&) (in /usr/lib/dyld)
+      n1: 794066944 0x1000172E0: dyld4::ProcessConfig::ProcessConfig(dyld4::KernelArgs const*, dyld4::SyscallDelegate&) (in /usr/lib/dyld)
+       n0: 794066944 0x100015465: (below main) (in /usr/lib/dyld)
+ n0: 19664896 0x0: ???
+ n0: 118784 in 3 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=48
+#-----------
+time=8606736384
+mem_heap_B=1609048064
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=8606740480
+mem_heap_B=1609052160
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=8606773248
+mem_heap_B=1609084928
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=9143644160
+mem_heap_B=2145955840
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=9152032768
+mem_heap_B=2154344448
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=9153081344
+mem_heap_B=2155393024
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=9154129920
+mem_heap_B=2156441600
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
