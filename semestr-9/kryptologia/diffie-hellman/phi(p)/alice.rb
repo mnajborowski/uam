@@ -30,6 +30,7 @@ bob = alice_server.accept
 
 while true
  bob.puts pk.to_der
+ sleep(2)
  dhB_public_key = bob.gets
  dhb_public_key_converted = OpenSSL::BN.new(dhB_public_key)
  skA = dhA.compute_key(dhb_public_key_converted)

@@ -6,7 +6,7 @@ ecB.generate_key!
 ecB.public_key?
 ecB.private_key?
 
-alice = TCPSocket.new 'localhost', 8081
+alice = TCPSocket.new '10.100.5.224', 8081
 
 pkA_bn = OpenSSL::BN.new(alice.gets)
 pkA = OpenSSL::PKey::EC::Point.new(ecB.group, pkA_bn)
