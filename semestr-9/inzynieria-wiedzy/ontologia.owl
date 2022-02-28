@@ -1,0 +1,381 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#"
+     xml:base="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontologia_Naj_Les_Pog="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Miasto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Miasto">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Lokalizacja"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Prezes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Prezes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Producent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Producent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#System"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Właściciel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Właściciel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Imię -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Imię">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Nazwisko -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Nazwisko">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Aplikacja -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Aplikacja"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Komputer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Komputer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Komputer_przenośny -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Komputer_przenośny">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Komputer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Lokalizacja -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Lokalizacja"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#System -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#System"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Telefon -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Telefon">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie"/>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie_wskazujące -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie_wskazujące">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Android -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Android">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Apple -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Apple">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <Miasto rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Cupertino"/>
+        <Producent rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#iOS"/>
+        <Producent rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#iPhone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Bill_Gates -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Bill_Gates">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba"/>
+        <Prezes rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Microsoft"/>
+        <Właściciel rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Microsoft"/>
+        <Imię>Bill</Imię>
+        <Nazwisko>Gates</Nazwisko>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Cupertino -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Cupertino">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Lokalizacja"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Google -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Google">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <Miasto rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Mountain_View"/>
+        <Producent rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Android"/>
+        <Właściciel rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Motorola"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Google_Maps -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Google_Maps">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Aplikacja"/>
+        <Producent rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Google"/>
+        <Właściciel rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Google"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Laptop -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Laptop">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Komputer_przenośny"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Linux -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Linux">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Logitech -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Logitech">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <Producent rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#MX_Master"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#MX_Master -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#MX_Master">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Urządzenie_wskazujące"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Microsoft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Microsoft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <Producent rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Windows"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Moto_G100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Moto_G100">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Telefon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Motorola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Motorola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <Producent rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Moto_G100"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Mountain_View -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Mountain_View">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Lokalizacja"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#PC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#PC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Komputer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Smartfon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Smartfon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Telefon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Tim_Cook -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Tim_Cook">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Osoba"/>
+        <Prezes rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Apple"/>
+        <Imię>Tim</Imię>
+        <Nazwisko>Cook</Nazwisko>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Windows -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Windows">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#YouTube -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#YouTube">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Aplikacja"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Firma"/>
+        <Producent rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#YouTube"/>
+        <Właściciel rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Google"/>
+        <Właściciel rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#YouTube"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#iOS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#iOS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#System"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#iPhone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#iPhone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/pogod/ontologies/2022/0/ontologia_Naj_Les_Pog#Telefon"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
