@@ -1,0 +1,1442 @@
+-------
+SUMMARY
+-------
+[*] 249 total (249 new) contacts found.
+[recon-ng][dvwa][csv_file] > modules load recon/companies-contacts/pen
+[recon-ng][dvwa] > modules load recon/companies-contacts/pen
+[recon-ng][dvwa][pen] > run
+[*] No matches found for company 'DVWA'
+[recon-ng][dvwa][pen] > modules load recon/domains-contacts/pen
+[recon-ng][dvwa] > modules load recon/domains-contacts/pen
+[recon-ng][dvwa][pen] > run
+[*] No matches found for domain 'http://201.191.205.60/dvwa'
+[recon-ng][dvwa][pen] > modules load recon/domains-contacts/pgp_search
+[recon-ng][dvwa] > modules load recon/domains-contacts/pgp_search
+[recon-ng][dvwa][pgp_search] > run
+
+--------------------------
+HTTP://201.191.205.60/DVWA
+--------------------------
+[*] No results found.
+[recon-ng][dvwa][pgp_search] > modules load recon/domains-contacts/whois_pocs
+[recon-ng][dvwa] > modules load recon/domains-contacts/whois_pocs
+[recon-ng][dvwa][whois_pocs] > run
+
+--------------------------
+HTTP://201.191.205.60/DVWA
+--------------------------
+[*] URL: http://whois.arin.net/rest/pocs;domain=http://201.191.205.60/dvwa
+[!] 0.
+[!] Something broken? See https://github.com/lanmaster53/recon-ng/wiki/Troubleshooting#issue-reporting.
+[recon-ng][dvwa][whois_pocs] > modules load recon/domains-contacts/wikileaker
+[recon-ng][dvwa] > modules load recon/domains-contacts/wikileaker
+[recon-ng][dvwa][wikileaker] > run
+[*] https://search.wikileaks.org/?query=&exact_phrase=http://201.191.205.60/dvwa&include_external_sources=True&order_by=newest_document_date&page=1
+[recon-ng][dvwa][wikileaker] > 
+[recon-ng][dvwa][wikileaker] > db query DELETE FROM domains WHERE rowid > 1
+[*] 0 rows affected.
+[recon-ng][dvwa][wikileaker] > 
+[recon-ng][dvwa][wikileaker] > modules load recon/companies-domains/pen
+[recon-ng][dvwa] > modules load recon/companies-domains/pen
+[recon-ng][dvwa][pen] > run
+[*] No matches found for company 'DVWA'
+[recon-ng][dvwa][pen] > 
+[recon-ng][dvwa][pen] > db query DELETE FROM hosts WHERE host NOT LIKE '%.yyy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][pen] > db query DELETE FROM hosts WHERE host LIKE '%www%'
+[*] 0 rows affected.
+[recon-ng][dvwa][pen] > db query DELETE FROM ports WHERE host NOT LIKE '%.yyy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][pen] > db query DELETE FROM ports WHERE host LIKE '%www%'
+[*] 0 rows affected.
+[recon-ng][dvwa][pen] > 
+[recon-ng][dvwa][pen] > modules load recon/contacts-credentials/hibp_breach
+[recon-ng][dvwa] > modules load recon/contacts-credentials/hibp_breach
+[recon-ng][dvwa][hibp_breach] > run
+[!] Source contains no input.
+[recon-ng][dvwa][hibp_breach] > 
+[recon-ng][dvwa][hibp_breach] > db query DELETE FROM credentials WHERE username NOT LIKE '%@yyy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][hibp_breach] > 
+[recon-ng][dvwa][hibp_breach] > modules load recon/contacts-credentials/hibp_paste
+[recon-ng][dvwa] > modules load recon/contacts-credentials/hibp_paste
+[recon-ng][dvwa][hibp_paste] > run
+[!] Source contains no input.
+[recon-ng][dvwa][hibp_paste] > modules load recon/contacts-profiles/fullcontact
+[recon-ng][dvwa] > modules load recon/contacts-profiles/fullcontact
+[recon-ng][dvwa][fullcontact] > run
+[!] Source contains no input.
+[recon-ng][dvwa][fullcontact] > modules load recon/domains-companies/pen
+[recon-ng][dvwa] > modules load recon/domains-companies/pen
+[recon-ng][dvwa][pen] > run
+[*] No matches found for domain 'http://201.191.205.60/dvwa'
+[recon-ng][dvwa][pen] > modules load recon/domains-hosts/builtwith
+[recon-ng][dvwa] > modules load recon/domains-hosts/builtwith
+[recon-ng][dvwa][builtwith] > run
+
+--------------------------
+HTTP://201.191.205.60/DVWA
+--------------------------
+[recon-ng][dvwa][builtwith] > 
+[recon-ng][dvwa][builtwith] > db query DELETE FROM hosts WHERE host NOT LIKE '%.yyy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][builtwith] > db query DELETE FROM hosts WHERE host LIKE '%www%'
+[*] 0 rows affected.
+[recon-ng][dvwa][builtwith] > db query DELETE FROM ports WHERE host NOT LIKE '%.yyy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][builtwith] > db query DELETE FROM ports WHERE host LIKE '%www%'
+[*] 0 rows affected.
+[recon-ng][dvwa][builtwith] > 
+[recon-ng][dvwa][builtwith] > modules load recon/domains-hosts/certificate_transparency
+[recon-ng][dvwa] > modules load recon/domains-hosts/certificate_transparency
+[recon-ng][dvwa][certificate_transparency] > run
+
+--------------------------
+HTTP://201.191.205.60/DVWA
+--------------------------
+[*] Invalid response for 'http://201.191.205.60/dvwa'
+[recon-ng][dvwa][certificate_transparency] > 
+[recon-ng][dvwa][certificate_transparency] > db query DELETE FROM hosts WHERE host NOT LIKE '%.yyy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][certificate_transparency] > db query DELETE FROM hosts WHERE host LIKE '%www%'
+[*] 0 rows affected.
+[recon-ng][dvwa][certificate_transparency] > 
+[recon-ng][dvwa][certificate_transparency] > modules load recon/hosts-hosts/resolve
+[recon-ng][dvwa] > modules load recon/hosts-hosts/resolve
+[recon-ng][dvwa][resolve] > run
+[!] Source contains no input.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE rowid NOT IN (SELECT min(rowid) FROM contacts GROUP BY first_name, last_name, email)
+[*] 1 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query UPDATE hosts SET ip_address = "" WHERE ip_address IS NULL
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM hosts WHERE rowid NOT IN (SELECT * FROM (SELECT max.rowid FROM hosts max LEFT JOIN hosts bigger ON max.host = bigger.host AND LENGTH(max.ip_address) < LENGTH(bigger.ip_address) WHERE bigger.ip_address IS NULL) AS keepers)
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE last_name OR first_name IS NULL
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%(%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '_'
+[*] 6 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '–%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%=%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%+%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%[%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%...%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%®%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%«%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%“%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%academic%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%acquisition%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%administrator%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%advance%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%advisor%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%aetna%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%airline%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%alliance%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%america%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%analysis%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%anp-bc%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%answer%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%application%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%apply%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%approved%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%architect%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%audit%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%australia%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%austria%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%automat%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%backward%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%barricade%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%basket%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%benefit%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%blockchain%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%board%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%broken%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%business%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%captain%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%career%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%catch%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%center%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%cfp%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%challenge%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%checklist%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%cissp%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%climate%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%collective%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%companies%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%company%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%completes%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%comprehensive%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%connect%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%consult%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%contact%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%continuous%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%contract%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%convert%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%corporate%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%cpa%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%cpdc%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%create%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%cto%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%customer%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%cyber%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%decision%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%deduct%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%department%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%design%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%delivery%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%develop%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%difference%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%digital%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%director%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%dismiss%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%distribut%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%district%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%economic%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%education%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%engine%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%emirate%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%employ%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%enable%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%energy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%engagement%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%engineer%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%equipment%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%evolution%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%executive%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%excellent%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%experience%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%expose%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%factory%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%favorite%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%feeling%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%female%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%finance%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%financial%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%first%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%fitness%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%format%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%former%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%forward%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%future%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%global%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%gmail%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%goto%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%group%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%guide%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%hacker%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%health%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%helpdesk%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%healthcare%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%hipaa%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%holdings%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%hospital%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%hostmaster%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%idatasec%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%impagine%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%impact%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%important%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%inclusive%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%information%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%innovations%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%investment%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%intelligence%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%intern%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%interview%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%kpmg%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%leadership%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%legal%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%lending%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%letter%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%leverage%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%linked%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%limit%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%listen%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%loyal%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%ltd%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%maintenance%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%manage%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%manufacturing%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%market%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%master%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%mba%'
+[*] 1 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%md%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%medical%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%medicat%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%medicine%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%member%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%mending%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%meeting%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%military%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%national%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%network%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%norwegian%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%officer%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%online%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%operation%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%opportunity%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%overall%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%parkway%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%partner%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%parts%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%pattern%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%pdhi%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%people%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%perfiles%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%phr%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%pilates%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%position%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%positive%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%power%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%premium%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%president%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%private%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%process%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%product%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%professional%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%profili%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%project%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%promise%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%protocol%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%prpc%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%question%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%radio%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%ransomware%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%reached%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%realty%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%recruiter%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%reform%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%registry%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%relationship%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%research%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%restaurant%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%retirement%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%robot%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%seachange%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%secretariat%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%securities%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%security%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%semiconductor%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%senior%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%service%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%should%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%singhealth%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%singapore%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%skill%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%soc2%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%society%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%social%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%solution%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%speak%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%specialist%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%sport%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%sponsor%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%staff%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%standard%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%substring%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%successfully%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%supervisor%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%support%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%system%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%takeda%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%talent%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%teamwork%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%technical%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%technolog%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%therapeutic%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%three%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%today%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%trainer%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%training%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%transform%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%transport%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%trusted%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%ultimate%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%underwriting%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%understand%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%university%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%usa%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%value%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%walking%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%week%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%which%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%without%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%workplace%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%year%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE first_name OR last_name LIKE '%your%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE title LIKE '%intern%'
+[*] 6 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE title LIKE '%lecturer%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE title LIKE '%retired%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE title LIKE '%student%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE title LIKE '%unemployed%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM contacts WHERE title LIKE '%undergraduate%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query DELETE FROM credentials WHERE username NOT LIKE "%@yyy"
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query DELETE FROM hosts WHERE host NOT LIKE '%.yyy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM hosts WHERE host LIKE '%www%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query DELETE FROM ports WHERE host NOT LIKE '%.yyy%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM ports WHERE host IS NULL
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE LENGTH(username) < 4
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE rowid NOT IN (SELECT min(rowid) FROM profiles GROUP BY username)
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%=%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%+%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%...%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%”%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%李%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%贤%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%杰%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%许%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%海%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%燕%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%许%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%慧%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%华%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%潘%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%展%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%明%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%可%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%杨%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%李%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%经%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%霖%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%何%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%华%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%成%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%영%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%훈%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%노%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%김%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%미%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query DELETE FROM profiles WHERE username LIKE '%나%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET email = LOWER(email)
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE credentials SET username = LOWER(username)
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE hosts SET host = LOWER(host)
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE ports SET host = LOWER(host)
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE profiles SET username = LOWER(username)
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET first_name = REPLACE(first_name,'keegan','Keegan')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET first_name = REPLACE(first_name,'XI','Xi')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET first_name = REPLACE(first_name,'MICHAEL','Michael')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET first_name = REPLACE(first_name,'TODD','Todd')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'ALEX','Alex')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'alvarez','Alvarez')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'bailey','Bailey')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'battle','Battle')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'brendan','Brendan')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'browder','Browder')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'brown','Brown')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'costello','Costello')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'DAntonio',"D'Antonio")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'davis','Davis')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'DAVIS','Davis')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'EATON','Eaton')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'elliott','Elliott')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'gutierrez','Gutierrez')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'horton','Horton')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'loveless','Loveless')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'martin','Martin')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'MARTIN','Martin')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mca','McA')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcb','McB')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcc','McC')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcd','McD')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mce','McE')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcf','McF')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcg','McG')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mch','McH')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mci','McI')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcij','McJ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mck','McK')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcl','McL')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcm','McM')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcn','McN')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcp','McP')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcq','McQ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcs','McS')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcv','McV')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Mcw','McW')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'mitchell','Mitchell')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'MORRIS','Morris')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OBanion',"O'Banion")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OBrian',"O'Brian")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OBrien',"O'Brien")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OConnell',"O'Connell")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OConnor',"O'Connor")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'ODay',"O'Day")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'ODoherty',"O'Doherty")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'ODonnell',"O'Donnell")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OHare',"O'Hare")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Ohearn',"O'Hearn")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OKeefe',"O'Keefe")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Okelly',"O'Kelly")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OFlanagan',"O'Flanagan")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OKeefe',"O'Keefe")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OLinn',"O'Linn")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OMalley',"O'Malley")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'Oneil',"O'Neil")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'ONeill',"O'Neill")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'OShea',"O'Shea")
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'REYES','Reyes')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'ROACH','Roach')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'SPEER','Speer')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'WALTERS','Walters')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'williams','Williams')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET last_name = REPLACE(last_name,'XU','Xu')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%...%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%Employee at%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%experience%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%first name%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%fortune%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%includes%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%learn%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%linkedin%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%people also%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%profile%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%undetermined%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%whois%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = '' WHERE title LIKE '%working%'
+[*] 0 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'analyst-','Analyst,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'analyst -','Analyst,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'analyst','Analyst,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Analyst-','Analyst,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Analyst -','Analyst,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Analyst:','Analyst,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'associate-','Associate,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'associate -','Associate,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'associate','Associate,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Associate-','Associate,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Associate -','Associate,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'audio','Audio')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'avp','Associate VP')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'banker','Banker')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'benefit','Benefit')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'builder','Buildeer')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Chief Executive Officer','CEO')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Chief Financial Officer','CEO')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Chief Information Security Officer','CISO')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Chief Operating Officer','COO')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'CFO of','CFO,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'consultant','Consultant')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Consultant:','Consultant,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'controller','Controller')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'COORDINATOR','Coordinator')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'court','Court')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'cnc','CNC')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'customer','Customer')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'delivery','Delivery')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'director-','Director,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'director -','Director,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'director','Director,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Director-','Director,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Director -','Director,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Director/','Director, ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Director for','Director,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Director of','Director,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Director Of','Director,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Director ','Director, ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'doctype','Doctype')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'driver','Driver')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'engineer','Engineer')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'executive','Executive')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'field','Field')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'finance manager','Financial Manager')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'financial','Financial')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'GLOBAL','Global')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'head-','Head,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'head -','Head,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'head','Head,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Head-','Head,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Head -','Head,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'installer','Installer')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'labor','Labor')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'lead-','Lead,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'lead -','Lead,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'lead','Lead,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Lead-','Lead,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Lead -','Lead,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'LOGISTICS','Logistics')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'machinist','Machinist')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'manager-','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'manager -','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'manager','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Manager-','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Manager -','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Manager of','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Manager Of','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Manager ','Manager, ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'MANAGER','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Mgr','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'mgr','Manager,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'networks','Networks,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'officer','Officer')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Officer -','Officer,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'operator','Operator')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'OWNER','Owner')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'preparation','Preparation')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'personal','Personal')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Proj ','Project,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'PROJECT','Project,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'processing','Processing')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'provider','Provider')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'qa ','QA ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'receiving','Receiving')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'reports','Reports')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'sales','Sales')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'security','Security')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'senior ','Senior ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'service','Service')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'shipping','Shipping')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Snr ','Senior ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'SPECIALIST','Specialist')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'specialist','Specialist')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'sr ','Senior ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'sr.','Senior')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Sr ','Senior ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Sr.','Senior')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'SR ','Senior ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'SR.','Senior')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'supervisor-','Supervisor,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'supervisor -','Supervisor,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'supervisor','Supervisor,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Supervisor-','Supervisor,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Supervisor -','Supervisor,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Supervisor of','Supervisor,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Supervisor Of','Supervisor,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Supervisor ','Supervisor, ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'support','Support')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'technical','Technical')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'technician','Technician')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'touring','Touring')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'us army','US Army')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'vice president','VP')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'vice-president','VP')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Vice President','VP')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Vice-President','VP')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'vp','VP,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'VP -','VP,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'VP Of','VP,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'VP of','VP,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'VP, of','VP,')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'VP ','VP, ')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > db query UPDATE contacts SET title = REPLACE(title,'Webdeveloper','Web Developer')
+[*] 235 rows affected.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > spool start /tmp/emails
+[*] Spooling output to '/tmp/emails'.
+[recon-ng][dvwa][resolve] > db query SELECT DISTINCT email FROM contacts WHERE email LIKE "%@yyy" ORDER BY email ASC
+[*] No data returned.
+[recon-ng][dvwa][resolve] > db query SELECT DISTINCT username FROM credentials WHERE username LIKE "%@yyy" ORDER BY username ASC
+[*] No data returned.
+[recon-ng][dvwa][resolve] > spool stop
+[*] Spooling stopped. Output saved to '/tmp/emails'.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > spool start /tmp/names
+[*] Spooling output to '/tmp/names'.
+[recon-ng][dvwa][resolve] > db query SELECT DISTINCT last_name,first_name,title FROM contacts WHERE last_name IS NOT NULL ORDER BY last_name,first_name ASC
+
+  +--------------------------------------------------------------------------+
+  |      last_name       |  first_name |                title                |
+  +--------------------------------------------------------------------------+
+  | Adlakhiya            | Arpan       | Graduate Engineering Trainee        |
+  | Allen                | Bayden      | Penetration Tester                  |
+  | Alves                | Anderson    | SysAdmin                            |
+  | Ameyaw               | Justice     |                                     |
+  | Anbari               | Omar        |                                     |
+  | Annavajjula          | Dinesh      |                                     |
+  | Avhad                | Pooja       | Security Engineer II                |
+  | Avulov               | Daniel      | Fullstack Academy                   |
+  | Awan                 | Rashid      | Local Web Projects                  |
+  | Bachu                | Sushmitha   | Architect                           |
+  | Bagga                | Harsimar    |                                     |
+  | Bagheri              | Somayeh     | Technical Officer                   |
+  | Bajis                | Jason       | Assistant Production Manager        |
+  | Banks                | Stuart      | anaerobic digestion operative       |
+  | Bathla               | Akshay      | Security Ops Analyst II             |
+  | Bava                 | Anmol       | Technology Consultant Cyber         |
+  | Bedi                 | Vishal      | Offensive Security Engineer         |
+  | Bennett              | Daniel      | Senior Systems Analyst              |
+  | Bhoir                | Vaibhav     | Ethical Hacker                      |
+  | Biglari              | Sara        | Team Lead Cyber Security Analyst    |
+  | Bilavin              | Shafeer     |                                     |
+  | Birdine              | Carey       | Security Operations Center Analyst  |
+  | Bonnette             | Jeremy      |                                     |
+  | Bounouar             | Celia       |                                     |
+  | Bowman               | Richard     | Quantity Surveyor                   |
+  | Brisco               | Katie       |                                     |
+  | Byford               | James       |                                     |
+  | C Gonzales Jr        | Juan        | Senior Network Systems Analyst      |
+  | Carroll              | Matthew     |                                     |
+  | Cashmore             | Huw         | Estimator                           |
+  | Castillo             | Len         |                                     |
+  | Ch                   | Nina        |                                     |
+  | Chafkaoui            | Yassine     |                                     |
+  | Chakraborty          | Arindam     | Risk Management Advisor             |
+  | Chanchal             | Raj         |                                     |
+  | Chandratre           | Samruddhi   | Wireless Network Engineer           |
+  | Chaudhary            | Shubham     |                                     |
+  | Chhabra              | Lovejot     | SYSTEM SECURITY AUDITOR             |
+  | Crawshaw             | Gary        | Field Operations Excellence Manager |
+  | Dave                 | Parv        | Adani Institute of Infrastructure   |
+  | Davies               | Emma        | Project Manager                     |
+  | Delgado              | Jhon        |                                     |
+  | Dewhurst             | Ryan        |                                     |
+  | Dhagadi              | Mahesh      | Associate Consultant                |
+  | Dhaliwal             | Khem        |                                     |
+  | Dhar                 | Manisa      | Associate                           |
+  | Dhiman               | Aman        |                                     |
+  | Duggal               | Abhinav     | Software Engineer                   |
+  | Duller               | Preston     | General Associate                   |
+  | Edwards              | Jonathon    | System Analyst                      |
+  | Eleie                | Abdi        |                                     |
+  | Ermakov              | Kirill      | Chief Security Officer              |
+  | Evangelio            | Lawrence    | Security Engineer                   |
+  | Everingham           | Guy         | Associate Consultant                |
+  | Fairbairn            | Trudi       |                                     |
+  | Fancher              | Angelique   |                                     |
+  | Faragher             | Steve       | Remote Site Services IT Analyst     |
+  | Farmer               | Levi        | Senior Guest Advisor                |
+  | Fernandes            | Bruna       |                                     |
+  | Francisco            | Austin      |                                     |
+  | Franks               | Elizabeth   |                                     |
+  | Gailey               | Johnny      | Owner                               |
+  | Galgat               | Abhinav     |                                     |
+  | Gandhi               | Vivek       |                                     |
+  | Gangjiyot            | Ashok       |                                     |
+  | Gaur                 | Yatharth    |                                     |
+  | Gephart              | Steven      |                                     |
+  | Goddard              | Jason       | Regulations                         |
+  | Gonzalez             | Joe         | Greater Chicago Area                |
+  | Grant                | Tiffany     | Registered Dental Hygienist         |
+  | Gupta                | Ajit        | Company Owner                       |
+  | Gupta                | Shivam      |                                     |
+  | Gurjar               | Niharika    |                                     |
+  | Hajiali              | Abdillahi   |                                     |
+  | Hames Tech IOSH MCGI | Alan        | SHEF Auditor                        |
+  | Hannaby              | Sue         | Work Flow Management Technician     |
+  | Harry                | Aalokit     | Ethical Hacker                      |
+  | Hatton               | Tomos       |                                     |
+  | Hayes                | Chris       | Project Manager                     |
+  | Hernandez            | Demetrio    |                                     |
+  | Herrera              | Yerko       |                                     |
+  | Hidayat              | Dhody       | DevOps Engineer                     |
+  | Highberg             | Mickey      |                                     |
+  | Hughes               | Daniel      |                                     |
+  | Hukkeri              | Afrin       | Software Engineer                   |
+  | Iglesias             | Ademir      |                                     |
+  | Iwen                 | Christopher |                                     |
+  | Jarraya              | Molka       | SI Administrator                    |
+  | Jasbi                | Alireza     | IT Manager                          |
+  | Jaubert              | Vincent     | Pentester                           |
+  | Jones                | David       | Leakage Technician                  |
+  | Jones                | Mark        | Developer Services ICS Project      |
+  | Jones                | Matt        | Project Manager                     |
+  | Jones                | Phil        | Senior Project Manager              |
+  | Karpe                | Nikhil      | Technical Consultant                |
+  | Kassabi              | Othmane     |                                     |
+  | Kaur                 | Pardeep     | Portioning Team Member              |
+  | Kedia                | Mukund      | Cyber Security Analyst              |
+  | Keny                 | Nirav       |                                     |
+  | Khanna               | Abhinav     |                                     |
+  | Khanna               | Jitesh      | Cyber Security Analyst              |
+  | Kheni                | Urvashi     | Software Engineer                   |
+  | Kim                  | Nathaniel   | Supervisor                          |
+  | Kotaidis             | Vasileios   | Cyber Security Specialist -         |
+  | Kowal                | Penny       |                                     |
+  | Kumar                | Ashish      |                                     |
+  | Kumar                | Avijit      | Information Security Analyst        |
+  | Kumar                | Himanshu    |                                     |
+  | Kumar                | Siddharth   |                                     |
+  | Kumar                | Sumit       | QA Engineer                         |
+  | Kumar                | Vishal      |                                     |
+  | Kuratti              | Vishal      | System Engineer                     |
+  | Kuriakose            | Abhilash    | Threat Analyst                      |
+  | Kyoung               | Haeri       | Rochester Institute of Technology   |
+  | Lahtinen             | Tuomo       |                                     |
+  | Laszkiewicz          | David       | Digital Marketing Co-ordinator      |
+  | Leal da Silva        | Eliane      |                                     |
+  | Lemarechal           | Kris        | Senior Server Engineer              |
+  | Lohore               | DJahi       |                                     |
+  | Louali               | Farouk      |                                     |
+  | Machhour             | Elmostafa   |                                     |
+  | Malki                | Anas        |                                     |
+  | Martinez             | Andy        | Senior Tech Associate               |
+  | Mehta                | Nikhar      | Security Software Engineer          |
+  | Mendiratta           | Roy         |                                     |
+  | Merner               | Patrick     | Junior Developer                    |
+  | Miranda              | Ronaldo     |                                     |
+  | Mmonu                | Ugochukwu   | Managed Care Specialist             |
+  | Mohamadi             | Amir        |                                     |
+  | Mohamed              | Amad        |                                     |
+  | Mohanty              | Sukanya     |                                     |
+  | Mokni                | Souha       | Cyber Security Engineer             |
+  | Monasterial          | Carlo       | IT Specialist                       |
+  | Moore                | Rachel      | DIRECTOR                            |
+  | Morrison             | Duncan      |                                     |
+  | Moule                | Steve       | Senior Project Manager              |
+  | Mounir               | Fairouz     |                                     |
+  | Moussaoui            | Badr        |                                     |
+  | Neves                | Mauricio    | Cyber Security Analyst              |
+  | Nickerson            | Rachel      | Customer Care Professional          |
+  | Nizam                | Nihal       |                                     |
+  | Obeahon              | Oti         | Cloud Compliance Analyst            |
+  | Owen                 | Steffan     | Project Manager                     |
+  | Pacheco              | Michael     | Technology Associate                |
+  | Pan                  | Walter      | Senior Airport Technician           |
+  | Pandey               | Abhishek    | Analyst                             |
+  | Panorios             | Michael     | Junior Software Developer           |
+  | Patel                | Nirmohi     |                                     |
+  | Patton               | Tyler       | Network Analyst                     |
+  | Peres                | Yoan        | Cyber Security Consultant           |
+  | Petrick              | Stephen     |                                     |
+  | Phdwork              | Sonia       |                                     |
+  | Pichotier            | Mickael     | Ressource humaine                   |
+  | Pinches              | Gemma       | Health and Safety Administrator     |
+  | Pole                 | Mrudulla    | Analyst                             |
+  | Punjani              | Anuj        |                                     |
+  | Quispe               | Alexander   | CyberSecurity Consultant            |
+  | Rached               | Roger       | Cyber Practitioner                  |
+  | Rajput               | Ankur       | Training and Enablement Manager     |
+  | Rajwania             | Laksh       | Information Security Consultant     |
+  | Rao                  | Shruti      | Senior Software Engineer            |
+  | Rastogi              | Kavita      | Developer                           |
+  | Ravichandran         | Divakar     | Programmer Analyst Trainee          |
+  | Reef                 | Giorgi      | Rail Engineer                       |
+  | Rees-slawson         | Cathryn     |                                     |
+  | Roberts              | Darren      |                                     |
+  | Roberts              | Gareth      | Control Room Operator               |
+  | Roblin               | Huw         | Asset Manager                       |
+  | Rodriguez            | Reece       | Security Engineer                   |
+  | Romero               | Jason       | Technical Account Manager           |
+  | Rowland              | Michael     | Knights Construction Group Ltd      |
+  | Roy                  | Andrew      |                                     |
+  | Rybak                | Tomasz      | Self Taught Pen Testing Enthusiast  |
+  | SAHA                 | Pramesh     | Scholar Trainee                     |
+  | Sahu                 | Nitesh      | Business Owner                      |
+  | Sahu                 | Shrikant    |                                     |
+  | Saini                | Abhishek    |                                     |
+  | Salazar              | Johanna     |                                     |
+  | Sathe                | Roopa       |                                     |
+  | Saunderson           | David       | Project Manager                     |
+  | Saxena               | Money       | Information Security Analyst        |
+  | Sayers               | Kiera       |                                     |
+  | Schofield            | Dave        | General Manager                     |
+  | Schoof               | Lane        | Cyber Security Analyst              |
+  | Selvakumar           | Anjana      |                                     |
+  | Shaabani             | Abolfazl    | Developer                           |
+  | Shafer               | Syd         |                                     |
+  | Shaikh               | Ebad        | Ethical Hacker                      |
+  | Sharma               | Anushka     | Client Services Engineer            |
+  | Sharma               | Rupali      | Information Security Engineer       |
+  | Sheahan              | Zac         | Telemetry Technician                |
+  | Sherkhane            | Snehal      |                                     |
+  | Shete                | Ayur        | Ethical Hacker                      |
+  | Shevgaonkar          | Mansi       |                                     |
+  | Shinde               | Gajanan     |                                     |
+  | Silverstein          | Michael     | Post Production Engineer            |
+  | Singano              | Enoch       |                                     |
+  | Singh                | Jasneet     | Data Analyst                        |
+  | Singh                | Lokesh      | Royal Bank of Scotland Business     |
+  | Singh                | Priya       |                                     |
+  | Sivakumar            | Suresh      |                                     |
+  | Smith                | Chris       |                                     |
+  | Solarczyk            | Piotr       |                                     |
+  | Sprague              | Jason       |                                     |
+  | Srivastava           | Ayush       | Associate Consultant                |
+  | Starling             | Kevin       | Non Executive Chairman              |
+  | Steward              | Kaden       | Technical Operations Analyst        |
+  | Sulkamo              | Ville       | Senior Integration Engineer         |
+  | Sun                  | Jiangfeng   |                                     |
+  | Tagliafierro         | Alessandro  |                                     |
+  | Taleb                | Anne        | Sales Manager                       |
+  | Tamarapalli          | Karthik     | Team Lead                           |
+  | Tan                  | Andrew      | Auston Inst                         |
+  | Tapiawala            | Parth       | Servic Desk Analyst                 |
+  | Tayoro               | Hugo        | DGA                                 |
+  | Tesh                 | Tame        | IT Specialist                       |
+  | Thi Hong Phuc        | Nguyen      |                                     |
+  | Tripathi             | Fagun       |                                     |
+  | Twydell              | Oliver      |                                     |
+  | Verner               | Trametra    |                                     |
+  | Walia                | Bhavnoor    | Network Engineer                    |
+  | Wall                 | Casey       | Security Services Northwest         |
+  | Wanguba              | Evans       |                                     |
+  | Wedley               | Leigh       | Managed Services Analyst            |
+  | Weerasinghe          | Sithum      | Associate Security Analyst          |
+  | Wilga                | Corey       | Security Analyst                    |
+  | Williams             | Brad        | Call Center Representative          |
+  | Williams             | Keith       |                                     |
+  | Williams             | Rapheal     | Simulation Lab Software Engineer    |
+  | Yadav                | Dharam      |                                     |
+  | Yadav                | Samarjeet   | Cyber Security Analyst              |
+  | Yap                  | Jerome      | Saudi Electricity Company           |
+  | Zaigum               | Asad        |                                     |
+  | Zeh                  | Christopher | Network Analyst                     |
+  | katam                | Sai         | Security Analyst                    |
+  +--------------------------------------------------------------------------+
+
+[*] 235 rows returned
+[recon-ng][dvwa][resolve] > spool stop
+[*] Spooling stopped. Output saved to '/tmp/names'.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > spool start /tmp/networks
+[*] Spooling output to '/tmp/networks'.
+[recon-ng][dvwa][resolve] > db query SELECT DISTINCT netblock FROM netblocks WHERE netblock IS NOT NULL ORDER BY netblock ASC
+[*] No data returned.
+[recon-ng][dvwa][resolve] > spool stop
+[*] Spooling stopped. Output saved to '/tmp/networks'.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > spool start /tmp/subdomains
+[*] Spooling output to '/tmp/subdomains'.
+[recon-ng][dvwa][resolve] > db query SELECT DISTINCT host,ip_address FROM hosts WHERE host IS NOT NULL ORDER BY host ASC
+[*] No data returned.
+[recon-ng][dvwa][resolve] > db query SELECT DISTINCT host,ip_address FROM ports WHERE host IS NOT NULL ORDER BY host ASC
+[*] No data returned.
+[recon-ng][dvwa][resolve] > spool stop
+[*] Spooling stopped. Output saved to '/tmp/subdomains'.
+[recon-ng][dvwa][resolve] > 
+[recon-ng][dvwa][resolve] > exit
+cat: networks: No such file or directory
+/opt/discover/passive.sh: line 515: /root/data/http://201.191.205.60/dvwa/data/hosts.htm: No such file or directory
+/opt/discover/passive.sh: line 516: /root/data/http://201.191.205.60/dvwa/data/hosts.htm: No such file or directory
+/opt/discover/passive.sh: line 532: /root/data/http://201.191.205.60/dvwa/data/emails.htm: No such file or directory
+/opt/discover/passive.sh: line 533: /root/data/http://201.191.205.60/dvwa/data/emails.htm: No such file or directory
+/opt/discover/passive.sh: line 543: /root/data/http://201.191.205.60/dvwa/data/names.htm: No such file or directory
+/opt/discover/passive.sh: line 544: /root/data/http://201.191.205.60/dvwa/data/names.htm: No such file or directory
+/opt/discover/passive.sh: line 545: /root/data/http://201.191.205.60/dvwa/data/names.htm: No such file or directory
+/opt/discover/passive.sh: line 590: /root/data/http://201.191.205.60/dvwa/data/registered-domains.htm: No such file or directory
+/opt/discover/passive.sh: line 591: /root/data/http://201.191.205.60/dvwa/data/registered-domains.htm: No such file or directory
+/opt/discover/passive.sh: line 604: /root/data/http://201.191.205.60/dvwa/data/squatting.htm: No such file or directory
+/opt/discover/passive.sh: line 605: /root/data/http://201.191.205.60/dvwa/data/squatting.htm: No such file or directory
+/opt/discover/passive.sh: line 615: /root/data/http://201.191.205.60/dvwa/data/subdomains.htm: No such file or directory
+/opt/discover/passive.sh: line 616: /root/data/http://201.191.205.60/dvwa/data/subdomains.htm: No such file or directory
+/opt/discover/passive.sh: line 632: /root/data/http://201.191.205.60/dvwa/data/xls.htm: No such file or directory
+/opt/discover/passive.sh: line 633: /root/data/http://201.191.205.60/dvwa/data/xls.htm: No such file or directory
+/opt/discover/passive.sh: line 646: /root/data/http://201.191.205.60/dvwa/data/pdf.htm: No such file or directory
+/opt/discover/passive.sh: line 647: /root/data/http://201.191.205.60/dvwa/data/pdf.htm: No such file or directory
+/opt/discover/passive.sh: line 660: /root/data/http://201.191.205.60/dvwa/data/ppt.htm: No such file or directory
+/opt/discover/passive.sh: line 661: /root/data/http://201.191.205.60/dvwa/data/ppt.htm: No such file or directory
+/opt/discover/passive.sh: line 674: /root/data/http://201.191.205.60/dvwa/data/txt.htm: No such file or directory
+/opt/discover/passive.sh: line 675: /root/data/http://201.191.205.60/dvwa/data/txt.htm: No such file or directory
+/opt/discover/passive.sh: line 688: /root/data/http://201.191.205.60/dvwa/data/doc.htm: No such file or directory
+/opt/discover/passive.sh: line 689: /root/data/http://201.191.205.60/dvwa/data/doc.htm: No such file or directory
+/opt/discover/passive.sh: line 698: /root/data/http://201.191.205.60/dvwa/data/whois-domain.htm: No such file or directory
+/opt/discover/passive.sh: line 699: /root/data/http://201.191.205.60/dvwa/data/whois-domain.htm: No such file or directory
+/opt/discover/passive.sh: line 710: /root/data/http://201.191.205.60/dvwa/data/whois-ip.htm: No such file or directory
+/opt/discover/passive.sh: line 711: /root/data/http://201.191.205.60/dvwa/data/whois-ip.htm: No such file or directory
+/opt/discover/passive.sh: line 717: /root/data/http://201.191.205.60/dvwa/data/passive-recon.htm: No such file or directory
+/opt/discover/passive.sh: line 718: /root/data/http://201.191.205.60/dvwa/data/passive-recon.htm: No such file or directory
+
+==================================================================
+
+***Scan complete.***
