@@ -1,2 +1,2 @@
 # uam
-All the things I do at Adam Mickiewicz University.
+All the things I've done at Adam Mickiewicz University.
